@@ -1,15 +1,27 @@
 {
-    "name": "fprime-openmct-server",
-    "version": "0.0.1",
-    "description": "Server for Connecting F-Prime Telemetry to OpenMCT Server",
-    "main": "fprime-openmct-server/server.js",
-    "scripts": {
-      "start": "node fprime-openmct-server/server.js",
-      "postinstall": "cd openmct && npm install"
-    },
-    "dependencies": {
-      "express": "^4.14.1",
-      "express-ws": "^3.0.0",
-      "ws": "^2.0.3"
-    }
+  "name": "fprime-openmct",
+  "version": "0.0.2",
+  "description": "F Prime to OpenMCT Bridge",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "clean": "rm -rf node_modules package-lock.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fprime-community/fprime-openmct.git"
+  },
+  "author": "Michael.D.Starch@jpl.nasa.gov",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/nasa/fprime/issues"
+  },
+  "homepage": "https://fprime.jpl.nasa.gov",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-ws": "^4.0.0",
+    "openmct": "4.1.0",
+    "ws": "^6.1.2",
+    "zeromq": "^6.4.2"
   }
+}

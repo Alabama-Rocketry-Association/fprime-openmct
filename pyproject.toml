@@ -42,8 +42,11 @@ Repository = "https://github.com/fprime-community/fprime-openmct"
 
 [project.scripts]
 fprime-openmct-dictionary-converter = "fprime_openmct.dictionary_converter:main"
+fprime-openmct-launch="fprime_openmct.launch:main"
 
-#[project.entry-points.fprime_gds]
+[project.entry-points.fprime_gds]
+openmct_launch="fprime_openmct.launch_plugin:OpenMCT"
+openmct_push="fprime_openmct.data_push:OpenMCTPush"
 
 ####
 # setuptools_scm dynamically generates version number from git, as well as automatically
