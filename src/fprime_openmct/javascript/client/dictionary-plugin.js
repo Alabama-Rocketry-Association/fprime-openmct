@@ -213,7 +213,8 @@ var DictionaryPlugin = function (openmct) {
         openmct.objects.addProvider('fprime.ref', objectProvider);
         getDictionaries().then((dictionaries) => {
             dictionaries.forEach((dictionary) => {
-                openmct.objects.addProvider(dictionary.deployment.namespace, objectProvider);
+                //openmct.objects.addProvider(dictionary.deployment.namespace, objectProvider);
+                openmct.objects.addProvider(dictionary.namespace, objectProvider);
             })
         });
 

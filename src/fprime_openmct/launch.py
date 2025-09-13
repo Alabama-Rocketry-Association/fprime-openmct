@@ -18,7 +18,6 @@ from fprime_gds.executables.cli import CompositeParser, DictionaryParser
 from fprime_openmct.dictionary_converter import OpenMCTDictionaryConverterParser
 
 JAVASCRIPT_PATH = Path(__file__).parent / "javascript"
-HOME = Path.home()
 
 class OpenMCTLaunchParser(ParserBase):
     """ Parser for OpenMCT dictionary conversion
@@ -84,8 +83,7 @@ def main():
             "--openmct-port", str(arguments.openmct_port),
             "--openmct-dictionary", str(arguments.openmct_output.absolute())
         ]
-        #node_process = subprocess.Popen(["npm", "start"] + npm_args, cwd="/home/desmos/ARA-openmct")#JAVASCRIPT_PATH)
-        node_process = subprocess.Popen(["npm", "start"], cwd=(f"{HOME}/ARA_DPF_FlightAvionics/ARA-openmct"))#JAVASCRIPT_PATH)
+        node_process = subprocess.Popen(["npm", "start"] + npm_args, cwd=JAVASCRIPT_PATH)
         print(f"[INFO] Ensuring stability of OpenMCT launch for 1 second")
         time.sleep(1)
         assert node_process.poll() is None, "OpenMCT failed to launch"
